@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n\n  <lista-produto></lista-produto>teste\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<h2>Here are some links to help you start: </h2>\n<ul>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">CLI Documentation</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\n  </li>\n</ul>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\r\n<lista-produto></lista-produto>\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -130,6 +130,17 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./ClienteApp/app/loja/listaProduto.component.css":
+/*!********************************************************!*\
+  !*** ./ClienteApp/app/loja/listaProduto.component.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".produto-info img {       \r\n    margin: 0 2px;   \r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNsaWVudGVBcHAvYXBwL2xvamEvbGlzdGFQcm9kdXRvLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0FBQ2pCIiwiZmlsZSI6IkNsaWVudGVBcHAvYXBwL2xvamEvbGlzdGFQcm9kdXRvLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZHV0by1pbmZvIGltZyB7ICAgICAgIFxyXG4gICAgbWFyZ2luOiAwIDJweDsgICBcclxufVxyXG4iXX0= */"
+
+/***/ }),
+
 /***/ "./ClienteApp/app/loja/listaProduto.component.html":
 /*!*********************************************************!*\
   !*** ./ClienteApp/app/loja/listaProduto.component.html ***!
@@ -137,7 +148,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\r\n  <li *ngFor=\"let p of produtos\">{{ p.nome }}</li>\r\n</ul>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\" produto-info col-xs-4 well\" *ngFor=\"let p of produtos\">\r\n    <img src=\"/img/smartphone-lg-k10.jpg\" width=\"200\" height=\"200\" />\r\n    <h4>{{p.nome}}</h4>\r\n    <h3><strong>{{p.preco | currency:\"R$\":true}}</strong></h3>\r\n    <button id=\"meu-button\" class=\"btn btn-success btn-sm\" (click)=\"adicionarProduto(p)\">Comprar</button>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -170,7 +181,8 @@ var ListaProduto = /** @class */ (function () {
     ListaProduto = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: "lista-produto",
-            template: __webpack_require__(/*! ./listaProduto.component.html */ "./ClienteApp/app/loja/listaProduto.component.html")
+            template: __webpack_require__(/*! ./listaProduto.component.html */ "./ClienteApp/app/loja/listaProduto.component.html"),
+            styles: [__webpack_require__(/*! ./listaProduto.component.css */ "./ClienteApp/app/loja/listaProduto.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_servicos_dataServices__WEBPACK_IMPORTED_MODULE_2__["DataServices"]])
     ], ListaProduto);
