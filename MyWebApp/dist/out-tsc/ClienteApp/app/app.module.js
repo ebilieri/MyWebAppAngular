@@ -1,21 +1,28 @@
 import * as tslib_1 from "tslib";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
+//import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { ListaProduto } from './loja/listaProduto.component';
+import { DataServices } from './servicos/dataServices';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = tslib_1.__decorate([
         NgModule({
             declarations: [
-                AppComponent
+                AppComponent,
+                ListaProduto
             ],
             imports: [
                 BrowserModule,
-                AppRoutingModule
+                HttpModule,
+                RouterModule.forRoot([], { useHash: true, enableTracing: true })
             ],
-            providers: [],
+            providers: [DataServices],
             bootstrap: [AppComponent]
         })
     ], AppModule);
