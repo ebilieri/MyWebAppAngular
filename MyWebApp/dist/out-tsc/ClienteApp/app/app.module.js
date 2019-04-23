@@ -2,12 +2,17 @@ import * as tslib_1 from "tslib";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-//import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { ListaProduto } from './loja/listaProduto.component';
 import { DataServices } from './servicos/dataServices';
 import { Carrinho } from './loja/carrinho/carrinho.component';
+import { RouterModule } from "@angular/router";
+import { Loja } from "./loja/loja.component";
+import { EfetivarCompra } from "./loja/efetivarCompra/efetivarCompra.component";
+var router = [
+    { path: "", component: Loja },
+    { path: "efetivarCompra", component: EfetivarCompra }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -16,12 +21,17 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 AppComponent,
                 ListaProduto,
-                Carrinho
+                Carrinho,
+                Loja,
+                EfetivarCompra
             ],
             imports: [
                 BrowserModule,
                 HttpModule,
-                RouterModule.forRoot([], { useHash: true, enableTracing: true })
+                RouterModule.forRoot(router, {
+                    useHash: true,
+                    enableTracing: false
+                })
             ],
             providers: [DataServices],
             bootstrap: [AppComponent]

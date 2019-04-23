@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +21,7 @@ namespace MyWebApp.Repositories
             return _myWebAppContext.Produtos.ToList();
         }
 
-        public Produto ObterProdutosPorId(int id)
+        public Produto ObterProdutoPorId(int id)
         {
             return _myWebAppContext.Produtos.FirstOrDefault(p => p.Id == id);
         }

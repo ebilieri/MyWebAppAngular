@@ -41,7 +41,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-xs-7\">\r\n    <lista-produto></lista-produto>\r\n  </div>\r\n  <div class=\"col-xs-5\">\r\n    <div class=\"well well-lg\">\r\n      <carrinho></carrinho>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "\r\n\r\n\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -92,20 +92,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./ClienteApp/app/app.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _loja_listaProduto_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./loja/listaProduto.component */ "./ClienteApp/app/loja/listaProduto.component.ts");
-/* harmony import */ var _servicos_dataServices__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./servicos/dataServices */ "./ClienteApp/app/servicos/dataServices.ts");
-/* harmony import */ var _loja_carrinho_carrinho_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./loja/carrinho/carrinho.component */ "./ClienteApp/app/loja/carrinho/carrinho.component.ts");
+/* harmony import */ var _loja_listaProduto_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./loja/listaProduto.component */ "./ClienteApp/app/loja/listaProduto.component.ts");
+/* harmony import */ var _servicos_dataServices__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./servicos/dataServices */ "./ClienteApp/app/servicos/dataServices.ts");
+/* harmony import */ var _loja_carrinho_carrinho_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./loja/carrinho/carrinho.component */ "./ClienteApp/app/loja/carrinho/carrinho.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _loja_loja_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./loja/loja.component */ "./ClienteApp/app/loja/loja.component.ts");
+/* harmony import */ var _loja_efetivarCompra_efetivarCompra_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./loja/efetivarCompra/efetivarCompra.component */ "./ClienteApp/app/loja/efetivarCompra/efetivarCompra.component.ts");
 
 
 
 
-//import { AppRoutingModule } from './app-routing.module';
 
 
 
 
 
+
+
+var router = [
+    { path: "", component: _loja_loja_component__WEBPACK_IMPORTED_MODULE_9__["Loja"] },
+    { path: "efetivarCompra", component: _loja_efetivarCompra_efetivarCompra_component__WEBPACK_IMPORTED_MODULE_10__["EfetivarCompra"] }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -113,15 +120,20 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _loja_listaProduto_component__WEBPACK_IMPORTED_MODULE_6__["ListaProduto"],
-                _loja_carrinho_carrinho_component__WEBPACK_IMPORTED_MODULE_8__["Carrinho"]
+                _loja_listaProduto_component__WEBPACK_IMPORTED_MODULE_5__["ListaProduto"],
+                _loja_carrinho_carrinho_component__WEBPACK_IMPORTED_MODULE_7__["Carrinho"],
+                _loja_loja_component__WEBPACK_IMPORTED_MODULE_9__["Loja"],
+                _loja_efetivarCompra_efetivarCompra_component__WEBPACK_IMPORTED_MODULE_10__["EfetivarCompra"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"].forRoot([], { useHash: true, enableTracing: true })
+                _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(router, {
+                    useHash: true,
+                    enableTracing: false
+                })
             ],
-            providers: [_servicos_dataServices__WEBPACK_IMPORTED_MODULE_7__["DataServices"]],
+            providers: [_servicos_dataServices__WEBPACK_IMPORTED_MODULE_6__["DataServices"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -139,7 +151,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Carrinho de Compras</h3>\r\n<div>Contagem: {{ data.pedido.contagem }}</div>\r\n<div>Total: {{ data.pedido.total | currency: \"R$ \" : true}}</div>\r\n<table class=\"table table-condensed table-hover\">\r\n  <thead>\r\n    <tr>\r\n      <td>Nome</td>\r\n      <td>Quantidade</td>\r\n      <td>Preço</td>\r\n      <td>Total</td>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let item of data.pedido.ItensPedidos\">\r\n      <td>{{ item.Produto.nome }}</td>\r\n      <td>{{ item.Quantidade }}</td>\r\n      <td>{{ item.Produto.preco | currency: \"R$ \" : true }}</td>\r\n      <td>{{ (item.Produto.preco * item.Quantidade) | currency: \"R$ \" : true }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n"
+module.exports = "<h3>Carrinho de Compras</h3>\r\n<div>Contagem: {{ data.pedido.contagem }}</div>\r\n<div>Total: {{ data.pedido.total | currency: \"R$ \" : true}}</div>\r\n<table class=\"table table-condensed table-hover\">\r\n  <thead>\r\n    <tr>\r\n      <td>Nome</td>\r\n      <td>Quantidade</td>\r\n      <td>Preço</td>\r\n      <td>Total</td>\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let item of data.pedido.ItensPedidos\">\r\n      <td>{{ item.Produto.nome }}</td>\r\n      <td>{{ item.Quantidade }}</td>\r\n      <td>{{ item.Produto.preco | currency: \"R$ \" : true }}</td>\r\n      <td>{{ (item.Produto.preco * item.Quantidade) | currency: \"R$ \" : true }}</td>\r\n    </tr>\r\n  </tbody>\r\n</table>\r\n<a routerLink=\"efetivarCompra\" class=\"btn btn-success\" *ngIf=\"data.pedido.ItensPedidos.length > 0\">Efetivar Compra</a>\r\n"
 
 /***/ }),
 
@@ -171,6 +183,63 @@ var Carrinho = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_servicos_dataServices__WEBPACK_IMPORTED_MODULE_2__["DataServices"]])
     ], Carrinho);
     return Carrinho;
+}());
+
+
+
+/***/ }),
+
+/***/ "./ClienteApp/app/loja/efetivarCompra/efetivarCompra.component.html":
+/*!**************************************************************************!*\
+  !*** ./ClienteApp/app/loja/efetivarCompra/efetivarCompra.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\r\n    <div *ngIf=\"mensagem\" class=\"alert alert-warning\">{{mensagem}}</div>\r\n    <h3>Efetivar Compra</h3>\r\n    <table class=\"table table-bordered table-hover\">\r\n        <thead>\r\n            <tr *ngFor=\"let item of data.pedido.ItensPedidos\">\r\n                <td><img src=\"/img/smartphone-lg-k10.jpg\" width=\"200\" height=\"200\" /></td>\r\n                <td>{{item.Produto.nome}}</td>\r\n                <td>{{item.Quantidade}}</td>\r\n                <td>{{item.Produto.preco | currency:\"R$\":true}}</td>\r\n                <td>{{(item.Produto.preco * item.Quantidade) | currency:\"R$\":true}}</td>\r\n            </tr>\r\n        </thead>\r\n    </table>\r\n    <div class=\"col-xs-4 col-xs-offset-8 text-right\">\r\n        <table class=\"table table-condensed\">\r\n            <tr>\r\n                <td>total</td>\r\n                <td>{{data.pedido.total | currency:\"R$\":true}}</td>\r\n            </tr>\r\n            <tr>\r\n                <td>Frete</td>\r\n                <td>R$ 0.00</td>\r\n            </tr>\r\n        </table>\r\n        <button class=\"btn btn-success\" (click)=\"onEfetivarCompra()\">Comprar</button>\r\n        <a routerLink=\"\" class=\"btn btn-info\">Cancelar</a>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./ClienteApp/app/loja/efetivarCompra/efetivarCompra.component.ts":
+/*!************************************************************************!*\
+  !*** ./ClienteApp/app/loja/efetivarCompra/efetivarCompra.component.ts ***!
+  \************************************************************************/
+/*! exports provided: EfetivarCompra */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EfetivarCompra", function() { return EfetivarCompra; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./ClienteApp/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _servicos_dataServices__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../servicos/dataServices */ "./ClienteApp/app/servicos/dataServices.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+var EfetivarCompra = /** @class */ (function () {
+    function EfetivarCompra(data, router) {
+        this.data = data;
+        this.router = router;
+    }
+    EfetivarCompra.prototype.onEfetivarCompra = function () {
+        var _this = this;
+        this.data.efetivarCompra()
+            .subscribe(function (sucesso) {
+            if (sucesso) {
+                _this.router.navigate([""]);
+            }
+        }, function (erro) { return _this.mensagem = "Falha ao salvar pedido"; });
+    };
+    EfetivarCompra = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: "efetivar",
+            template: __webpack_require__(/*! ./efetivarCompra.component.html */ "./ClienteApp/app/loja/efetivarCompra/efetivarCompra.component.html")
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_servicos_dataServices__WEBPACK_IMPORTED_MODULE_2__["DataServices"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+    ], EfetivarCompra);
+    return EfetivarCompra;
 }());
 
 
@@ -237,6 +306,47 @@ var ListaProduto = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_servicos_dataServices__WEBPACK_IMPORTED_MODULE_2__["DataServices"]])
     ], ListaProduto);
     return ListaProduto;
+}());
+
+
+
+/***/ }),
+
+/***/ "./ClienteApp/app/loja/loja.component.html":
+/*!*************************************************!*\
+  !*** ./ClienteApp/app/loja/loja.component.html ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-xs-7\">\r\n        <lista-produto></lista-produto>\r\n    </div>\r\n    <div class=\"col-xs-5\">\r\n        <div class=\"well well-sm\">\r\n            <carrinho></carrinho>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./ClienteApp/app/loja/loja.component.ts":
+/*!***********************************************!*\
+  !*** ./ClienteApp/app/loja/loja.component.ts ***!
+  \***********************************************/
+/*! exports provided: Loja */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Loja", function() { return Loja; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./ClienteApp/node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var Loja = /** @class */ (function () {
+    function Loja() {
+    }
+    Loja = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: "loja",
+            template: __webpack_require__(/*! ./loja.component.html */ "./ClienteApp/app/loja/loja.component.html")
+        })
+    ], Loja);
+    return Loja;
 }());
 
 
@@ -356,6 +466,14 @@ var DataServices = /** @class */ (function () {
             item.Quantidade = 1;
             this.pedido.ItensPedidos.push(item);
         }
+    };
+    DataServices.prototype.efetivarCompra = function () {
+        var _this = this;
+        return this.http.post("/api/pedido", this.pedido)
+            .map(function (resposta) {
+            _this.pedido = new _modelos_pedidos__WEBPACK_IMPORTED_MODULE_4__["Pedido"]();
+            return true;
+        });
     };
     DataServices = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
