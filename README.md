@@ -1,27 +1,46 @@
 # AngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+Repositório que armazena os arquivos do aplicativo criado no curso ASP NET Core com Angular: Desenvolvimento Web Fullstack
+https://www.udemy.com/desenvolvimento-aspnet-core-angular
 
-## Development server
+Criar uma soluções simples utilizando as seguintes tecnologias:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Visual Studio 2019
 
-## Code scaffolding
+    Linguagem de Programação C# ( Para quem já tem conhecimentos consideráveis da linguagem)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ASP NET Core 2.2
 
-## Build
+    WEB API
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    Banco de Dados - MySQL
 
-## Running unit tests
+    Mapeamento do Banco de Dados com o Entity Framework Core 2.2
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    Typescript
 
-## Running end-to-end tests
+    Angular ( Componentes, Serviços e Routing)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+O curso foi todo restruturado e continua recebendo novas aulas semanalmente até fecharmos as atualizações para o primeiro semestre deste ano.
 
-## Further help
+Além de aprender a construir um simples projeto utilizando algumas boas praticas de desenvolvimento, o aluno vai aprender como implantar o projeto no servidor Internet Information Server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+No curso o aluno também tem acesso ao código fonte do projeto publicado no GitHub para comparar seu projeto com o projeto do curso.
+
+Espero sinceramente que você goste do curso e conquiste excelentes resultados.
+O que você aprenderá
+
+    Vai aprender como fazer download e instalação do Visual Studio 2019
+    Download e Instalação do banco de dados MySQL
+    Fazer configuração do Entity Framework Core
+    Fazer mapeamento(básico) objeto relacional com o Entity framework Core
+    ASP NET WEB API
+    Angular ( Componentes, Serviços e Routing)
+    Como Construir uma loja virtual simples
+    Como implantar o sistema no Internet Information Server
+
+Há algum requisito ou pré-requisito para o curso?
+
+    Conexão com a internet
+    Conhecimentos Básicos da Linguagem de programação C#
+    Paciência e Força de Vontade
